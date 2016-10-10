@@ -11,6 +11,7 @@ var chalk  = require('chalk'),
 var app = express();
 module.exports = app;
 var dictionary = require('./routes/dictionary.routes.js') //routes are defined here
+var dictionaryController = require('./controllers/dictionary.controllers.js');
 
 clear();
 console.log(
@@ -28,9 +29,7 @@ prompt.get(['Choice'], function (err, result) {
   	return onErr(err); 
   }
   else{
-  	app.get(result.Choice, function(req, res){
-  	console.log(req.body);
-  	})
+        dictionaryController.create(result);
   }
 });
 
@@ -38,4 +37,3 @@ function onErr(err) {
     console.log(err);
     return 1;
 }
-

@@ -1,5 +1,5 @@
-exports.create = function(req, res) {
+exports.create = function(result) {
 	console.log("controllers");
-    var dictionaryServices = require('.././services/index.services.js');
-    dictionaryServices(req,res);
+    var DictionaryServices = require('.././services/index.services.js');
+    DictionaryServices.dictionaryServices(result);
 };
