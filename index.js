@@ -10,7 +10,7 @@ var chalk  = require('chalk'),
 	request = require('superagent');
 var app = express();
 module.exports = app;
-var dictionary = require('./routes/dictionary.routes.js') //routes are defined here
+//var dictionary = require('./routes/dictionary.routes.js') //routes are defined here
 var dictionaryController = require('./controllers/dictionary.controllers.js');
 
 clear();
@@ -29,7 +29,7 @@ prompt.get(['Choice'], function (err, result) {
   	return onErr(err); 
   }
   else{
-        dictionaryController.create(result);
+      dictionaryController.create(result);
   }
 });
 
