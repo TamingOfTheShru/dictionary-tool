@@ -7,7 +7,8 @@ var chalk  = require('chalk'),
 	prompt = require('prompt'),
 	co =  require('co'),
 	program = require('commander'),
-	request = require('superagent');
+	request = require('superagent'),
+	$ = require("jquery");
 var app = express();
 module.exports = app;
 var dictionary = require('./routes/dictionary.routes.js') //routes are defined here
@@ -19,7 +20,7 @@ console.log(
   )
 );
 console.log('Welcome to Dictionary Tool!'+ '\n'+ 'What would you like to do?'+'\n');
-console.log("1. Word Definition"+'\n'+ "2. Word Example"+'\n');
+console.log(chalk.yellow("1. Word Definition"+'\n'+ "2. Word Example"+'\n'));
 
 prompt.start();
 
@@ -28,10 +29,13 @@ prompt.get(['Choice'], function (err, result) {
   	return onErr(err); 
   }
   else{
-  	app.get(result.Choice, function(req, res){
-  	console.log(req.body);
-  	})
-  }
+  	$input = result.Choice;
+  	$.ajax({
+        type: 'post',
+        url: "/saveData",
+        data: $input
+        });
+	}
 });
 
 function onErr(err) {
@@ -39,3 +43,6 @@ function onErr(err) {
     return 1;
 }
 
+
+var $ = require('jquery');
+var http = require('http');

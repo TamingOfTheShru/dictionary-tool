@@ -17,12 +17,13 @@
     "clear": "0.0.1",
     "clui": "^0.3.1",
     "co": "*",
-    "prompt": "*",
     "commander": "*",
     "express": "*",
     "figlet": "^1.1.2",
     "github": "^2.1.0",
     "http": "*",
+    "jquery": "^3.1.1",
+    "prompt": "*",
     "superagent": "^2.3.0"
   },
   "bin": {
