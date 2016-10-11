@@ -11,7 +11,8 @@ var chalk  = require('chalk'),
 	$ = require("jquery");
 var app = express();
 module.exports = app;
-var dictionary = require('./routes/dictionary.routes.js') //routes are defined here
+//var dictionary = require('./routes/dictionary.routes.js') //routes are defined here
+var dictionaryController = require('./controllers/dictionary.controllers.js');
 
 clear();
 console.log(
@@ -29,20 +30,11 @@ prompt.get(['Choice'], function (err, result) {
   	return onErr(err); 
   }
   else{
-  	$input = result.Choice;
-  	$.ajax({
-        type: 'post',
-        url: "/saveData",
-        data: $input
-        });
-	}
+      dictionaryController.create(result);
+  }
 });
 
 function onErr(err) {
     console.log(err);
     return 1;
 }
-
-
-var $ = require('jquery');
-var http = require('http');
