@@ -14,6 +14,12 @@ module.exports.WordFullDictionary = function (result){
 	  	else{  
 	  		var promise = [];
 	  		promise.push(Definitions.definitionsApi(result));
+	  		promise.push(Examples.examplesApi(result));
+	  		promise.push(Synonyms.synonymsApi(result));
+	  		promise.push(Antonyms.antonymsApi(result));
+	  		Promise.all(promise).then(function(){
+	  			
+	    	});;
 	  	}
 	});  	 	
 }

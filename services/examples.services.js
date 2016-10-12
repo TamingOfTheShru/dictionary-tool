@@ -13,7 +13,9 @@ module.exports.Examples = function (result){
 	});  	 	
 }
 
-module.exports.examplesApi = function(result){
+module.exports.examplesApi = examplesApi;
+
+function examplesApi(result){
 	console.log("working");
 	var lib = require('./lib.services.js');
 	var prompt = require('prompt'), request = require("request"), chalk = require("chalk");

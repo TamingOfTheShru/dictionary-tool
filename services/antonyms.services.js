@@ -13,7 +13,9 @@ module.exports.Antonyms = function (result){
 	});  	 	
 }
 
-module.exports.antonymsApi = function(result){
+module.exports.antonymsApi = antonymsApi;
+
+function antonymsApi(result){
 	var dictionaryController = require('.././controllers/dictionary.controllers.js');
 	var lib = require('./lib.services.js');
 	var prompt = require('prompt'), request = require("request"), chalk = require("chalk");
