@@ -13,7 +13,7 @@ module.exports.Examples = function (result){
 	});  	 	
 }
 
-examplesApi = function(result){
+module.exports.examplesApi = function(result){
 	console.log("working");
 	var lib = require('./lib.services.js');
 	var prompt = require('prompt'), request = require("request"), chalk = require("chalk");
@@ -33,6 +33,7 @@ examplesApi = function(result){
   		else{ 
   			var respJson = JSON.parse(body);
   			var respData = respJson.examples;
+        console.log(chalk.red("Examples:-"));
   			for (var i=0; i< respData.length; i++){
   				var meaning = respData[i].text;
   				console.log(

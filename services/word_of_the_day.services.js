@@ -1,7 +1,6 @@
 module.exports.WordOfTheDay = function (result){
 	var prompt = require('prompt');
  	var lib = require('./lib.services.js');
- 	var examples = require('./examples.services.js');
  	console.log("Please enter the date (yyyy-mm-dd):");
  	prompt.start();
  	prompt.get(['Date'], function (err, result) {
@@ -14,7 +13,7 @@ module.exports.WordOfTheDay = function (result){
 	});  	 	
 }
 
-wordOfTheDayApi = function(result){
+module.exports.wordOfTheDayApi = function(result){
 	var lib = require('./lib.services.js');
 	var prompt = require('prompt'), request = require("request"), chalk = require("chalk");
 	var options = {
@@ -30,7 +29,7 @@ wordOfTheDayApi = function(result){
 			console.log("error:");
 			console.log(err);
 		}
-		else{ 
+		else{  
 			var respJson = JSON.parse(body);
 			console.log(
 			chalk.cyan("The word for the day is:"+respJson.word)

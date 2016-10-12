@@ -1,4 +1,4 @@
-module.exports.Definitions = function (result){
+module.exports.Antonyms = function (result){
 	var prompt = require('prompt');
  	var lib = require('./lib.services.js');
  	console.log("Please enter the word:");
@@ -8,19 +8,17 @@ module.exports.Definitions = function (result){
 	  	console.log(err); 
 	  	}
 	  	else{  
-			definitionsApi(result);
+	  		antonymsApi(result);
 	  	}
 	});  	 	
 }
 
-module.exports.definitionsApi = definitionsApi;
-
-function definitionsApi(result){
+module.exports.antonymsApi = function(result){
 	var dictionaryController = require('.././controllers/dictionary.controllers.js');
 	var lib = require('./lib.services.js');
 	var prompt = require('prompt'), request = require("request"), chalk = require("chalk");
 	var options = {
-		uri: 'http://api.wordnik.com/v4/word.json/'+ result.Word + '/definitions?limit=10&includeRelated=true&useCanonical=false&includeTags=false&api_key=' + lib.API_KEY,
+		uri: 'http://api.wordnik.com/v4/word.json/'+ result.Word + '/relatedWords?useCanonical=false&relationshipTypes=antonym&limitPerRelationshipType=10&api_key=' + lib.API_KEY,
 		port : 80,
 		method : 'GET',
 		headers: {
@@ -32,13 +30,14 @@ function definitionsApi(result){
 			console.log("error:");
 			console.log(err);
 		}
-		else{ 
+		else{
 			var respJson = JSON.parse(body);
-			console.log(chalk.red("Definitions:-"));
-			for (var i=0; i< respJson.length; i++){
-				var meaning = respJson[i].text;
+			var respData = respJson[0].words;
+			console.log(chalk.red("Antonyms:-"));
+			for (var i=0; i< respData.length; i++){
+				var synonym = respData[i];
 				console.log(
-				chalk.cyan((i+1)+":"+meaning +"\n")
+				chalk.cyan((i+1)+":"+synonym +"\n")
 			);
 			}
 			dictionaryController.create();
