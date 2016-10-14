@@ -45,7 +45,7 @@ exports.dictionaryServices = function(result) {
     }
 
 
-    /*else if(result.Choice == 6){
+    /*else if(result.Choice == 7){
 		var wordGame = lib.WordGame;
     	wordGame.WordGame(result);
 	}*/
