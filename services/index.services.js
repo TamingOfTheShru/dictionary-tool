@@ -1,3 +1,4 @@
+
 exports.dictionaryServices = function(result) {
     var lib = require('./lib.services.js');
     var prompt = require('prompt');
@@ -53,3 +54,4 @@ exports.dictionaryServices = function(result) {
         prompt.stop();
     }
 }
+
