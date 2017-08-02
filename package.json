@@ -1,31 +1,33 @@
 {
-  "name": "dictionary-tool",
-  "version": "1.0.0",
-  "description": "Command Line Dictionary Tool",
-  "repository": {
-    "type": "git",
-    "url": "(https://github.com/shrutitanwar/Dictionary-Tool.git)"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Shruti Tanwar <shruti.tanwar93@gmail.com>",
-  "license": "ISC",
-  "preferGlobal": true,
-  "dependencies": {
-    "chalk": "^1.1.3",
-    "clear": "0.0.1",
-    "clui": "^0.3.1",
-    "co": "*",
-    "prompt": "*",
-    "commander": "*",
-    "express": "*",
-    "figlet": "^1.1.2",
-    "github": "^2.1.0",
-    "http": "*",
-    "superagent": "^2.3.0"
-  },
-  "bin": {
-    "dictionary-tool": "./index.js"
-  }
+    "name": "dictionary-tool",
+    "version": "1.0.0",
+    "description": "Command Line Dictionary Tool",
+    "repository": {
+        "type": "git",
+        "url": "(https://github.com/shrutitanwar/Dictionary-Tool.git)"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Shruti Tanwar <shruti.tanwar93@gmail.com>",
+    "license": "ISC",
+    "preferGlobal": true,
+    "dependencies": {
+        "chalk": "^1.1.3",
+        "clear": "0.0.1",
+        "clui": "^0.3.1",
+        "co": "*",
+        "commander": "*",
+        "express": "*",
+        "figlet": "^1.1.2",
+        "github": "^2.1.0",
+        "jquery": "^3.1.1",
+        "prompt": "*",
+        "q": "^1.4.1",
+        "request": "^2.75.0",
+        "superagent": "^2.3.0"
+    },
+    "bin": {
+        "dictionary-tool": "./index.js"
+    }
 }
